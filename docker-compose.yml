@@ -1,0 +1,22 @@
+version: '3'
+services:
+  wso2:  
+    image: carloshlemos/wso2is-5.10.0-xacmlv3
+    container_name: wso2
+    ports:
+      - "4000:4000"
+      - "9443:9443"
+      - "9763:9763"
+#    volumes:
+#      - ./server/:/home/wso2carbon/wso2is-5.10.0/
+#      - ./server/:/home/wso2carbon/wso2is-5.10.0/repository/deployment/server/
+#      - /tmp:/tmp
+    networks:
+      - code-network
+
+volumes:
+  wso2:
+
+networks:
+  code-network:
+    driver: bridge
